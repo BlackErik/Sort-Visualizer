@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Sort</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="sortBox">
+        <div
+          class="number"
+          v-for="(num, index) in randomNumbers"
+          :key="index"
+          :style="{ height: (num * 4) + 'px', backgroundColor: getColor(index) }"
+        ></div>
+      </div>
+      <div id="buttonBox">
+        <button @click="createRandomList()">Create Random List</button>
+        <button @click="bubbleSort(randomNumbers)">Bubble Sort</button>
+        <button @click="shakerSort(randomNumbers)">Shaker Sort</button>
+        <button @click="countingSort(randomNumbers)">Counting Sort</button>
+        <button @click="mergeSort(randomNumbers, 0, randomNumbers.length - 1)">
+          Merge Sort
+        </button>
+        <button @click="quickSort(randomNumbers, 0, randomNumbers.length - 1)">
+          Quick Sort
+        </button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
